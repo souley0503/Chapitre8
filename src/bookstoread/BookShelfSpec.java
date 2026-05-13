@@ -23,6 +23,12 @@ public class BookShelfSpec {
         assertEquals(2, books.size(), () -> "BookShelf should have two books.");
     }
 
-    // Fixed: Renamed this method because it was a duplicate of the one above
+    @Test
+    void bookshelfEmptyWhenEmptyAddCalled() {
+        BookShelf shelf = new BookShelf();
+        shelf.add();
+        List<String> books = shelf.books();
+        assertEquals(0, books.size(), () -> "BookShelf should be empty when no books are provided to add.");
+    }
 
 }
